@@ -1,0 +1,20 @@
+### configure sudo to allow your user to run the apt command without a password
+### open the sudoers file with visudo command
+```sudo visudo```
+### Add a line at the end of the file that allows your user to run the apt update command without a password. Replace yourusername with your actual username:
+```yourusername ALL=(ALL) NOPASSWD: /usr/bin/apt update```
+### If you want to allow all apt commands without a password, you can do this:
+```yourusername ALL=(ALL) NOPASSWD: /usr/bin/apt```
+
+
+### setup cronjob to run the script daily at 2am
+
+```crontab -e```
+
+### Add the following line at the end of the crontab file:
+
+```0 2 * * * /path/to/auto-update.sh```
+
+### To remove the all cronjobs
+
+```crontab -r```
